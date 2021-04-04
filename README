@@ -1,0 +1,54 @@
+Nume: BERCU Mihaela-Bianca
+Grupă: 333CB
+
+# Tema 2
+
+Organizare
+-
+Organizare: 
+
+	Toate functiile au fost implementate in so_stdio.c . 
+	Antetul este reprezentat de so_stdio.h.
+	In so_stdio.c se vor face toate apelurile de sistem,
+	 inclusiv dclararea unei structuri de tip stdio.
+	Makefile realizeaza biblioteca dinamica libso_stdio.
+
+Implementare 
+
+	Structura implementata pentru cerintele temei are o forma simpla, 
+	bazata pe existenta unui buffer in eficientizarea apelurilor de sistem.
+	so_stdio copiaza aproape perfect biblioteca stdio.h.
+
+Functionalitati extra:
+	Nu exista functionalitati extra.
+
+Dificultati intampinate:
+
+	Dificil de inteles unele erori in checker.
+	Memcheck apare in diverse erori si mai ales in declararea unei variabile nefolosite. 
+	Acest lucru poate sa ia din timp in contextul in care nu am fost invatata sa o privesc drept greseala. 
+
+Lucruri interesante descoperite:
+	Buffer-ul este o varianta foarte optima de a folosi cat mai eficient apelurile de sistem.
+-
+
+Cum se compilează și cum se rulează?
+
+	din 2-stdio , fisierul Makefile: make
+	Acesta realizeza biblioteca dinamica libso_stdio care va fi folosita in checker.
+
+	apoi pentru a verifica cu checker-ul oferit:
+	/2-stdio/checker-lin: 	make -f Makefile.checker
+
+
+Bibliografie
+-
+http://ocw.cs.pub.ro/courses/so/laboratoare/laborator-01
+http://ocw.cs.pub.ro/courses/so/laboratoare/laborator-02
+http://ocw.cs.pub.ro/courses/so/laboratoare/laborator-03
+http://ocw.cs.pub.ro/courses/so/curs/process
+
+Git
+-
+http://gitlab.cs.pub.ro/mihaela.bercu/l3-so-assignmentis
+-

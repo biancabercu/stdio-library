@@ -1,0 +1,43 @@
+==4959== Memcheck, a memory error detector
+==4959== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==4959== Using Valgrind-3.15.0.GIT and LibVEX; rerun with -h for copyright info
+==4959== Command: _test/bin/test_ferror_read_large ./_test/work/test_29
+==4959== Parent PID: 4954
+==4959== 
+==4959== Invalid read of size 1
+==4959==    at 0x4E3E2FF: so_fgetc (so_stdio.c:196)
+==4959==    by 0x4E3E131: so_fread (so_stdio.c:144)
+==4959==    by 0x1091E4: main (test_ferror_read_large.c:73)
+==4959==  Address 0x563b950 is 0 bytes after a block of size 4,096 alloc'd
+==4959==    at 0x4C2FDFB: malloc (vg_replace_malloc.c:309)
+==4959==    by 0x4E3DE96: so_fopen (so_stdio.c:49)
+==4959==    by 0x109163: main (test_ferror_read_large.c:66)
+==4959== 
+==4959== 
+==4959== HEAP SUMMARY:
+==4959==     in use at exit: 20,144 bytes in 3 blocks
+==4959==   total heap usage: 8 allocs, 5 frees, 26,424 bytes allocated
+==4959== 
+==4959== 48 bytes in 1 blocks are still reachable in loss record 1 of 3
+==4959==    at 0x4C2FDFB: malloc (vg_replace_malloc.c:309)
+==4959==    by 0x4E3DE88: so_fopen (so_stdio.c:47)
+==4959==    by 0x109163: main (test_ferror_read_large.c:66)
+==4959== 
+==4959== 4,096 bytes in 1 blocks are still reachable in loss record 2 of 3
+==4959==    at 0x4C2FDFB: malloc (vg_replace_malloc.c:309)
+==4959==    by 0x4E3DE96: so_fopen (so_stdio.c:49)
+==4959==    by 0x109163: main (test_ferror_read_large.c:66)
+==4959== 
+==4959== 16,000 bytes in 1 blocks are still reachable in loss record 3 of 3
+==4959==    at 0x4C2FDFB: malloc (vg_replace_malloc.c:309)
+==4959==    by 0x10905C: main (test_ferror_read_large.c:49)
+==4959== 
+==4959== LEAK SUMMARY:
+==4959==    definitely lost: 0 bytes in 0 blocks
+==4959==    indirectly lost: 0 bytes in 0 blocks
+==4959==      possibly lost: 0 bytes in 0 blocks
+==4959==    still reachable: 20,144 bytes in 3 blocks
+==4959==         suppressed: 0 bytes in 0 blocks
+==4959== 
+==4959== For lists of detected and suppressed errors, rerun with: -s
+==4959== ERROR SUMMARY: 3712 errors from 1 contexts (suppressed: 0 from 0)
